@@ -3,17 +3,22 @@ mlstverse is a general purpose identification software.
 Currently database for Mycobacterium species (consists of MTB complex and nontuberculous mycobacteria) is available.
 
 # Installation
-## Install R package
-
+## Install mlstverse and database
 ```
-> git clone ymatsumoto/mlstverse
+> git clone https://github.com/ymatsumoto/mlstverse
+> git clone https://github.com/ymatsumoto/mlstverse.Mycobacterium.db
 > R
+>>> install.packages("devtools")
+>>> if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+>>> BiocManager::install("Rsamtools", version = "3.8")
 >>> devtools::install("mlstverse")
+>>> devtools::install("mlstverse.Mycobacterium.db")
 ```
 ## Prepare Loci sequences
-Downloads [Loci.fasta](https://) to your local strage.
-Loci.fasta is also included in mlstverse repository.
-https://github.com/ymatsumoto/mlstverse/raw/master/mlstverse_0.1.0_R_x86_64-pc-linux-gnu.tar.gz
+Downloads [Loci.fasta](https://github.com/ymatsumoto/mlstverse/raw/master/data/Loci.fasta)
+to your local strage. Loci.fasta is also included in mlstverse repository.
+
 # Usage
 ## Preparing bam Files
 Before identifying isolates using R scripts, prepare bam files.

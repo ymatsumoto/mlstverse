@@ -75,7 +75,7 @@ calcMLSTScore <- function(query,
                           mlstdb=mlstverse.NTM.db,
                           method="default",
                           normalize=TRUE,
-                          threads=16) {
+                          threads=1) {
   continueSF <- TRUE
   if (!snowfall::sfIsRunning()) {
     suppressMessages(snowfall::sfInit(parallel=T, cpus=threads, useRscript=T))
@@ -168,7 +168,7 @@ obtainConsensus <- function(bam, query, locus) {
 #' @param min_ratio only use genes larger than the ratio to maximum reads depth (default: 0.1)
 #' @param th.pvalue filter by threshold value in Kolmogorov–Smirnov test (default: 0.05)
 #' @param th.score filter by threshold value in MLST score (default: 0.1)
-#' @param threads number of threads (default: 16)
+#' @param threads number of threads (default: 1)
 #' @param normalize boolean, if TRUE, normalize coverage (default: TRUE)
 #' @param samfile return value of readSAM() (default: NULL)
 #'
@@ -177,7 +177,7 @@ obtainConsensus <- function(bam, query, locus) {
 #'
 #' @examples
 mlstverse <- function(filenames,
-                      mlstdb=mlstverse.NTM.db::mlstverse.NTM.db,
+                      mlstdb=mlstverse.Mycobacterium.db::mlstverse.Mycobacterium.db,
                       min_depth=0,
                       min_ratio=0.1,
                       th.pvalue=0.05,
