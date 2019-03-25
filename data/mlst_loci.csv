@@ -1,0 +1,185 @@
+mlst_tag,blast_tag,locus_tag,product,method,source
+Locus_0001,,rpsA,30S ribosomal protein S1,product,cds
+Locus_0002,,rpsB,30S ribosomal protein S2,product,cds
+Locus_0003,,rpsC,30S ribosomal protein S3,product,cds
+Locus_0004,,rpsD,30S ribosomal protein S4,product,cds
+Locus_0005,,rpsE,30S ribosomal protein S5,product,cds
+Locus_0006,,rpsF,30S ribosomal protein S6,product,cds
+Locus_0007,,rpsG,30S ribosomal protein S7,product,cds
+Locus_0008,,rpsH,30S ribosomal protein S8,product,cds
+Locus_0009,,rpsI,30S ribosomal protein S9,product,cds
+Locus_0010,,rpsJ,30S ribosomal protein S10,product,cds
+Locus_0011,,rpsK,30S ribosomal protein S11,product,cds
+Locus_0012,,rpsL,30S ribosomal protein S12,product,cds
+Locus_0013,,rpsM,30S ribosomal protein S13,product,cds
+Locus_0014,,rpsN,30S ribosomal protein S14,product,cds
+Locus_0015,,rpsO,30S ribosomal protein S15,product,cds
+Locus_0016,,rpsP,30S ribosomal protein S16,product,cds
+Locus_0017,,rpsQ,30S ribosomal protein S17,product,cds
+Locus_0018,,rpsR,30S ribosomal protein S18,product,cds
+Locus_0019,,rpsS,30S ribosomal protein S19,product,cds
+Locus_0020,,rpsT,30S ribosomal protein S20,product,cds
+Locus_0021,,rpsU,30S ribosomal protein S21,product,cds
+Locus_0022,,rplA,50S ribosomal protein L1,product,cds
+Locus_0023,,rplB,50S ribosomal protein L2,product,cds
+Locus_0024,,rplC,50S ribosomal protein L3,product,cds
+Locus_0025,,rplD,50S ribosomal protein L4,product,cds
+Locus_0026,,rplE,50S ribosomal protein L5,product,cds
+Locus_0027,,rplF,50S ribosomal protein L6,product,cds
+Locus_0028,,rplL,50S ribosomal protein L7/L12,product,cds
+Locus_0029,,rplI,50S ribosomal protein L9,product,cds
+Locus_0030,,rplJ,50S ribosomal protein L10,product,cds
+Locus_0031,,rplK,50S ribosomal protein L11,product,cds
+Locus_0032,,rplM,50S ribosomal protein L13,product,cds
+Locus_0033,,rplN,50S ribosomal protein L14,product,cds
+Locus_0034,,rplO,50S ribosomal protein L15,product,cds
+Locus_0035,,rplP,50S ribosomal protein L16,product,cds
+Locus_0036,,rplQ,50S ribosomal protein L17,product,cds
+Locus_0037,,rplR,50S ribosomal protein L18,product,cds
+Locus_0038,,rplS,50S ribosomal protein L19,product,cds
+Locus_0039,,rplT,50S ribosomal protein L20,product,cds
+Locus_0040,,rplU,50S ribosomal protein L21,product,cds
+Locus_0041,,rplV,50S ribosomal protein L22,product,cds
+Locus_0042,,rplW,50S ribosomal protein L23,product,cds
+Locus_0043,,rplX,50S ribosomal protein L24,product,cds
+Locus_0044,,rpmA,50S ribosomal protein L27,product,cds
+Locus_0045,,rpmB,50S ribosomal protein L28,product,cds
+Locus_0046,,rpmC,50S ribosomal protein L29,product,cds
+Locus_0047,,rpmD,50S ribosomal protein L30,product,cds
+Locus_0048,,rpmE,50S ribosomal protein L31,product,cds
+Locus_0049,,rpmF,50S ribosomal protein L32,product,cds
+Locus_0050,,rpmG,50S ribosomal protein L33,product,cds
+Locus_0051,,rpmH,50S ribosomal protein L34,product,cds
+Locus_0052,,rpmI,50S ribosomal protein L35,product,cds
+Locus_0053,,rpmJ,50S ribosomal protein L36,product,cds
+Locus_0054,,rrs,16S ribosomal RNA,product,rna
+Locus_0055,,rrl,23S ribosomal RNA,product,rna
+Locus_0056,NP_214519.2_5,Rv0005,,blast,cds
+Locus_0057,NP_214520.1_6,Rv0006,,blast,cds
+Locus_0058,NP_214681.1_172,Rv0167,,blast,cds
+Locus_0059,NP_214682.1_173,Rv0168,,blast,cds
+Locus_0060,YP_177701.1_174,Rv0169,,blast,cds
+Locus_0061,NP_214684.1_175,Rv0170,,blast,cds
+Locus_0062,NP_214685.1_176,Rv0171,,blast,cds
+Locus_0063,NP_214686.1_177,Rv0172,,blast,cds
+Locus_0064,NP_214687.1_178,Rv0173,,blast,cds
+Locus_0065,NP_214688.1_179,Rv0174,,blast,cds
+Locus_0066,NP_214690.1_181,Rv0176,,blast,cds
+Locus_0067,NP_214691.1_182,Rv0177,,blast,cds
+Locus_0068,NP_214796.1_288,Rv0282,,blast,cds
+Locus_0069,NP_214797.1_289,Rv0283,,blast,cds
+Locus_0070,NP_214798.1_290,Rv0284,,blast,cds
+Locus_0071,YP_177710.1_291,Rv0285,,blast,cds
+Locus_0072,YP_177711.1_292,Rv0286,,blast,cds
+Locus_0073,NP_214801.1_293,Rv0287,,blast,cds
+Locus_0074,NP_214802.1_294,Rv0288,,blast,cds
+Locus_0075,NP_214803.1_295,Rv0289,,blast,cds
+Locus_0076,NP_214804.1_296,Rv0290,,blast,cds
+Locus_0077,NP_214805.1_297,Rv0291,,blast,cds
+Locus_0078,NP_214806.1_298,Rv0292,,blast,cds
+Locus_0079,NP_214954.1_445,Rv0440,,blast,cds
+Locus_0080,YP_177740.1_597,Rv0589,,blast,cds
+Locus_0081,NP_215105.1_598,Rv0591,,blast,cds
+Locus_0082,NP_215106.1_599,Rv0592,,blast,cds
+Locus_0083,NP_215107.1_600,Rv0593,,blast,cds
+Locus_0084,NP_215108.1_601,Rv0594,,blast,cds
+Locus_0085,YP_177743.1_645,Rv0638,,blast,cds
+Locus_0086,NP_215181.1_674,Rv0667,,blast,cds
+Locus_0087,NP_215246.1_740,Rv0732,,blast,cds
+Locus_0088,YP_177752.1_762,Rv0754,,blast,cds
+Locus_0089,YP_177761.1_838,Rv0834c,,blast,cds
+Locus_0090,YP_177774.1_981,Rv0978c,,blast,cds
+Locus_0091,NP_215524.1_1013,Rv1008,,blast,cds
+Locus_0092,YP_177792.1_1165,Rv1169c,,blast,cds
+Locus_0093,NP_215740.1_1220,Rv1224,,blast,cds
+Locus_0094,NP_216000.1_1483,Rv1484,,blast,cds
+Locus_0095,NP_216210.1_1692,Rv1694,,blast,cds
+Locus_0096,NP_216298.1_1777,Rv1782,,blast,cds
+Locus_0097,YP_007410461.1_1778,Rv1783,,blast,cds
+Locus_0098,NP_216301.1_1779,Rv1785c,,blast,cds
+Locus_0099,YP_177833.1_1781,Rv1787,,blast,cds
+Locus_0100,YP_177834.1_1782,Rv1788,,blast,cds
+Locus_0101,YP_177835.1_1783,Rv1789,,blast,cds
+Locus_0102,YP_177836.1_1784,Rv1790,,blast,cds
+Locus_0103,YP_177837.1_1785,Rv1791,,blast,cds
+Locus_0104,YP_177838.1_1786,Rv1793,,blast,cds
+Locus_0105,NP_216311.1_1788,Rv1795,,blast,cds
+Locus_0106,NP_216312.1_1789,Rv1796,,blast,cds
+Locus_0107,NP_216313.1_1790,Rv1797,,blast,cds
+Locus_0108,NP_216314.1_1791,Rv1798,,blast,cds
+Locus_0109,YP_177846.1_1810,Rv1818c,,blast,cds
+Locus_0110,NP_216337.1_1813,Rv1821,,blast,cds
+Locus_0111,NP_216424.1_1898,Rv1908c,,blast,cds
+Locus_0112,YP_177852.1_1956,Rv1966,,blast,cds
+Locus_0113,NP_216483.1_1957,Rv1967,,blast,cds
+Locus_0114,NP_216484.1_1958,Rv1968,,blast,cds
+Locus_0115,NP_216485.1_1959,Rv1969,,blast,cds
+Locus_0116,NP_216486.1_1960,Rv1970,,blast,cds
+Locus_0117,NP_216487.1_1961,Rv1971,,blast,cds
+Locus_0118,NP_216504.1_1980,Rv1988,,blast,cds
+Locus_0119,NP_216559.1_2033,Rv2043c,,blast,cds
+Locus_0120,NP_216609.1_2084,Rv2093c,,blast,cds
+Locus_0121,NP_216610.1_2085,Rv2094c,,blast,cds
+Locus_0122,YP_177878.1_2384,Rv2396,,blast,cds
+Locus_0123,NP_216932.2_2405,Rv2416c,,blast,cds
+Locus_0124,YP_177881.1_2419,Rv2430c,,blast,cds
+Locus_0125,YP_177882.1_2420,Rv2431c,,blast,cds
+Locus_0126,NP_217102.1_2577,Rv2586c,,blast,cds
+Locus_0127,NP_217103.1_2578,Rv2587c,,blast,cds
+Locus_0128,NP_217104.1_2579,Rv2588c,,blast,cds
+Locus_0129,YP_177924.1_3088,Rv3097c,,blast,cds
+Locus_0130,YP_177950.1_3233,Rv3240c,,blast,cds
+Locus_0131,NP_217961.1_3433,Rv3444c,,blast,cds
+Locus_0132,NP_217962.2_3434,Rv3445c,,blast,cds
+Locus_0133,NP_217964.1_3436,Rv3447c,,blast,cds
+Locus_0134,NP_217965.1_3437,Rv3448,,blast,cds
+Locus_0135,NP_217966.1_3438,Rv3449,,blast,cds
+Locus_0136,NP_217967.1_3439,Rv3450c,,blast,cds
+Locus_0137,NP_218011.1_3478,Rv3494c,,blast,cds
+Locus_0138,NP_218012.1_3479,Rv3495c,,blast,cds
+Locus_0139,NP_218013.1_3480,Rv3496c,,blast,cds
+Locus_0140,NP_218014.1_3481,Rv3497c,,blast,cds
+Locus_0141,NP_218015.1_3482,Rv3498c,,blast,cds
+Locus_0142,YP_177977.1_3483,Rv3499c,,blast,cds
+Locus_0143,YP_177979.1_3492,Rv3508,,blast,cds
+Locus_0144,YP_177980.1_3495,Rv3511,,blast,cds
+Locus_0145,YP_177982.1_3498,Rv3514,,blast,cds
+Locus_0146,NP_218131.1_3597,Rv3614c,,blast,cds
+Locus_0147,NP_218132.1_3598,Rv3615c,,blast,cds
+Locus_0148,NP_218133.1_3599,Rv3616c,,blast,cds
+Locus_0149,YP_178011.1_3729,Rv3746c,,blast,cds
+Locus_0150,NP_218312.1_3777,Rv3795,,blast,cds
+Locus_0151,YP_178019.1_3794,Rv3812,,blast,cds
+Locus_0152,NP_218366.1_3831,Rv3849,,blast,cds
+Locus_0153,NP_218379.1_3844,Rv3862c,,blast,cds
+Locus_0154,NP_218381.1_3846,Rv3864,,blast,cds
+Locus_0155,NP_218382.1_3847,Rv3865,,blast,cds
+Locus_0156,NP_218383.1_3848,Rv3866,,blast,cds
+Locus_0157,NP_218384.1_3849,Rv3867,,blast,cds
+Locus_0158,NP_218385.1_3850,Rv3868,,blast,cds
+Locus_0159,NP_218386.1_3851,Rv3869,,blast,cds
+Locus_0160,NP_218387.1_3852,Rv3870,,blast,cds
+Locus_0161,NP_218388.1_3853,Rv3871,,blast,cds
+Locus_0162,YP_178021.1_3854,Rv3872,,blast,cds
+Locus_0163,YP_178022.1_3855,Rv3873,,blast,cds
+Locus_0164,NP_218391.1_3856,Rv3874,,blast,cds
+Locus_0165,YP_178023.1_3857,Rv3875,,blast,cds
+Locus_0166,NP_218393.1_3858,Rv3876,,blast,cds
+Locus_0167,NP_218394.1_3859,Rv3877,,blast,cds
+Locus_0168,NP_218395.1_3860,Rv3878,,blast,cds
+Locus_0169,NP_218396.1_3861,Rv3879c,,blast,cds
+Locus_0170,NP_218397.1_3862,Rv3880c,,blast,cds
+Locus_0171,NP_218398.1_3863,Rv3881c,,blast,cds
+Locus_0172,NP_218399.1_3864,Rv3882c,,blast,cds
+Locus_0173,NP_218400.1_3865,Rv3883c,,blast,cds
+Locus_0174,NP_218401.1_3866,Rv3884c,,blast,cds
+Locus_0175,NP_218402.1_3867,Rv3885c,,blast,cds
+Locus_0176,NP_218403.1_3868,Rv3886c,,blast,cds
+Locus_0177,NP_218404.1_3869,Rv3887c,,blast,cds
+Locus_0178,NP_218406.1_3871,Rv3889c,,blast,cds
+Locus_0179,NP_218407.1_3872,Rv3890c,,blast,cds
+Locus_0180,NP_218408.1_3873,Rv3891c,,blast,cds
+Locus_0181,YP_178024.1_3874,Rv3892c,,blast,cds
+Locus_0182,YP_178025.1_3875,Rv3893c,,blast,cds
+Locus_0183,NP_218411.1_3876,Rv3894c,,blast,cds
+Locus_0184,NP_218412.1_3877,Rv3895c,,blast,cds
