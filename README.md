@@ -3,6 +3,22 @@ mlstverse is a general purpose identification software.
 Currently database for Mycobacterium species (consists of MTB complex and nontuberculous mycobacteria) is available.
 
 # Installation
+## Get source codes 
+```
+> git clone https://github.com/ymatsumoto/mlstverse
+> git clone https://github.com/ymatsumoto/mlstverse.Mycobacterium.db
+```
+## Install software and dependencies
+```
+> R
+>>> if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+>>> BiocManager::install("Rsamtools", version = "3.8")
+>>> install.packages("devtools")
+>>> devtools::install("mlstverse")
+>>> devtools::install("mlstverse.Mycobacterium.db")
+```
+<!---
 ## Install mlstverse and database
 ```
 > git clone https://github.com/ymatsumoto/mlstverse
@@ -15,6 +31,8 @@ Currently database for Mycobacterium species (consists of MTB complex and nontub
 >>> devtools::install("mlstverse")
 >>> devtools::install("mlstverse.Mycobacterium.db")
 ```
+--->
+
 ## Prepare Loci sequences
 Downloads [Loci.fasta](https://github.com/ymatsumoto/mlstverse/raw/master/data/Loci.fasta)
 to your local strage. Loci.fasta is also included in mlstverse repository.
@@ -52,16 +70,15 @@ print(result$score)
 | samfile | NULL | (optional) BamFile object in RSamtools package, input bam file. Excluive with *filenames* option.
 | method | "default" | (optional) Character, scoring methods. "default" and "sensitive" are available.
 
-
 # Other
-MLST database used in mlstverse is compatible with other MLST methodology. We are currently preparing to be also available
+MLST database used in the mlstverse is compatible with other MLST methodologies. We are currently preparing to be also available
 [pubmlst](https://pubmlst.org) database from mlstverse.
 
 ## Citation
 Not published yet.
 
 ## Licence
-Released under MIT + file LICENSE.
+Released under MIT + file LICENCE.
 
 ## Contact
 If you find some problem, please contact matsumoto@gen-info.osaka-u.ac.jp

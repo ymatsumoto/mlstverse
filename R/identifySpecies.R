@@ -310,7 +310,7 @@ mlstverse <- function(filenames,
       tmp$strains[is.na(tmp$strains)] <- ""
     }
     score[[filename]] <-
-      data_frame(genus=gsub("\\|.*", "", speciesNames),
+      dplyr::data_frame(genus=gsub("\\|.*", "", speciesNames),
                  species=gsub(".*\\|", "", speciesNames),
                  strain=tmp$strains,
                  score=tmp$score,
