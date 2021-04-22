@@ -292,19 +292,29 @@ mlstverse <- function(filenames,
       tmp$ks.pvalue <- sapply(tmp$ks.test, "[[", "p.value")
 
       table.score <- data.frame(index=j, score=results[j], pvalue=tmp$ks.pvalue)
-      table.score.p <- subset(table.score, pvalue > th.pvalue | pvalue == max(table.score$pvalue))
+      if (th.pvalue == 0) {
+        table.score.p <- table.score
+      } else {
+        table.score.p <- subset(table.score, pvalue > th.pvalue | pvalue==max(table.score$pvalue))
+      }
       table.score.p.s <- subset(table.score.p, score==max(score))
       l <- table.score.p.s$index[order(table.score.p.s$pvalue, decreasing=T)[1]]
-
-      tmp$mean <- c(tmp$mean, q.mean[j==l])
-      tmp$var <- c(tmp$var, q.var[j==l])
-      tmp$dist <- c(tmp$dist, list(q.dist[,j==l]))
-      tmp$pvalue <- c(tmp$pvalue, tmp$ks.pvalue[j==l])
-      tmp$score <- c(tmp$score, results[l])
-      tmp$strains <- c(tmp$strains,
-                       gsub("strain=",
-                            "",
-                            lapply(strsplit(mlstdb$notes[l], ","), "[", 3)))
+      if (is.na(l)) {
+        tmp$mean <- c(tmp$mean, NA)
+        tmp$var <- c(tmp$var, NA)
+        tmp$dist <- c(tmp$dist, list(NA))
+        tmp$pvalue <- c(tmp$pvalue, NA)
+        tmp$score <- c(tmp$score, results[l])
+        tmp$strains <- c(tmp$strains, gsub("strain=", "", lapply(strsplit(mlstdb$notes[l], ","), "[", 3)))
+      } else {
+        tmp$mean <- c(tmp$mean, q.mean[j == l])
+        tmp$var <- c(tmp$var, q.var[j == l])
+        tmp$dist <- c(tmp$dist, list(q.dist[, j == l]))
+        tmp$pvalue <- c(tmp$pvalue, tmp$ks.pvalue[j ==
+          l])
+        tmp$score <- c(tmp$score, results[l])
+        tmp$strains <- c(tmp$strains, gsub("strain=", "", lapply(strsplit(mlstdb$notes[l], ","), "[", 3)))
+      }
     }
     if (any(is.na(tmp$strains))) {
       tmp$strains[is.na(tmp$strains)] <- ""
