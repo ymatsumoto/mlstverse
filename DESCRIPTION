@@ -1,7 +1,7 @@
 Package: mlstverse
 Type: Package
 Title: An implementation of strain level identification based on MLST (Multi-Locus Sequence Typing) 
-Version: 0.1.1
+Version: 0.1.2
 Author: Who wrote it
 Maintainer: The package maintainer <matsumoto@gen-info.osaka-u.ac.jp>
 Description: mlstverse

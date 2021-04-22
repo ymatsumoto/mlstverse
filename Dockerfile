@@ -11,7 +11,7 @@ RUN echo "deb http://cran.rstudio.com/bin/linux/ubuntu xenial-cran35/" | tee -a 
  && cd ~ \
  && git clone https://github.com/lh3/minimap2 \
  && git clone https://github.com/lh3/bwa \
- && git clone https://github.com/samtools/htslib \
+ && git clone --recursive https://github.com/samtools/htslib \
  && git clone https://github.com/samtools/samtools \
  && git clone https://github.com/ymatsumoto/mlstverse \
  && git clone https://github.com/ymatsumoto/mlstverse.Mycobacterium.db \
@@ -29,6 +29,7 @@ RUN echo "deb http://cran.rstudio.com/bin/linux/ubuntu xenial-cran35/" | tee -a 
  && cd ~ && rm -rf minimap2 bwa htslib samtools mlstverse mlstverse.Mycobacterium.db install_mlstverse.r \
  && apt-get -y remove build-essential \
  && apt-get -y autoremove \
- && apt-get clean all
-
+ && apt-get clean all \
+ && groupadd -c -g 101 gen-info \
+ && useradd -u 10466 nanopore-user 
 ENTRYPOINT ["bash"]
