@@ -7,7 +7,7 @@ ENV VERSION 0.1.1
 RUN echo "deb http://cran.rstudio.com/bin/linux/ubuntu xenial-cran35/" | tee -a /etc/apt/sources.list \
  && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9 \
  && apt-get update \
- && apt-get -y install build-essential git r-base-core libssl-dev libcurl4-openssl-dev automake autoconf\
+ && apt-get -y install build-essential git r-base-core libssl-dev libcurl4-gnutls-dev libxml2-dev automake autoconf\
  && cd ~ \
  && git clone https://github.com/lh3/minimap2 \
  && git clone https://github.com/lh3/bwa \
@@ -30,6 +30,6 @@ RUN echo "deb http://cran.rstudio.com/bin/linux/ubuntu xenial-cran35/" | tee -a 
  && apt-get -y remove build-essential \
  && apt-get -y autoremove \
  && apt-get clean all \
- && groupadd -c -g 101 gen-info \
- && useradd -u 10466 nanopore-user 
+ && groupadd -o -g 101 gen-info \
+ && useradd -u 10466 -g 101 nanopore-user 
 ENTRYPOINT ["bash"]
