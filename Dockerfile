@@ -15,6 +15,7 @@ RUN echo "deb http://cran.rstudio.com/bin/linux/ubuntu xenial-cran35/" | tee -a 
  && git clone https://github.com/samtools/samtools \
  && git clone https://github.com/ymatsumoto/mlstverse \
  && git clone https://github.com/ymatsumoto/mlstverse.Mycobacterium.db \
+ && git clone https://github.com/ymatsumoto/mlstverse.pubmlst.db \
  && cd ~/minimap2 && make && cp minimap2 /usr/bin/ \
  && cd ~/bwa && make && cp bwa /usr/bin/ \
  && cd ~/htslib && autoheader && autoconf && ./configure && make && make install \
@@ -25,6 +26,7 @@ RUN echo "deb http://cran.rstudio.com/bin/linux/ubuntu xenial-cran35/" | tee -a 
  && echo "install.packages(\"devtools\", repos=\"https://cloud.r-project.org\")" >> install_mlstverse.r \
  && echo "devtools::install(\"mlstverse\")" >> install_mlstverse.r \
  && echo "devtools::install(\"mlstverse.Mycobacterium.db\")" >> install_mlstverse.r \
+ && echo "devtools::install(\"mlstverse.pubmlst.db\")" >> install_mlstverse.r \
  && Rscript install_mlstverse.r \
  && cd ~ && rm -rf minimap2 bwa htslib samtools mlstverse mlstverse.Mycobacterium.db install_mlstverse.r \
  && apt-get -y remove build-essential \

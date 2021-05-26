@@ -187,7 +187,6 @@ mlstverse <- function(filenames,
                       samfile=NULL,
                       method="default") {
   suppressWarnings(suppressMessages(snowfall::sfInit(parallel=T, cpus=threads, useRscript=T)))
-  #loci <- colnames(mlstdb)[grep("BACT[0-9]+", colnames(mlstdb))]
   loci <- colnames(mlstdb)[grep("Locus_[0-9]+", colnames(mlstdb))]
 
   score <- list()
@@ -214,7 +213,6 @@ mlstverse <- function(filenames,
     } else {
       sam <- samfile
     }
-    #sfExport("depth", "len.loci", "loci")
     cat(paste("  Generating query...\n"))
     query[[filename]] <-
       lapply(createQuery(loci, depth, len.loci),
@@ -229,9 +227,6 @@ mlstverse <- function(filenames,
     cat(paste("  Calculating MLST score...\n"))
     snowfall::sfExport("normalize", "method")
     results <- calcMLSTScore(query[[filename]], loci, mlstdb=mlstdb, threads=threads, method=method, normalize=normalize)
-    #results <- calcMLSTScore(query[[filename]], loci, mlstdb=mlstdb)
-    #results <- calcMLSTScore(query[[filename]], loci, mlstdb=mlstdb, method="sensitive", threads=threads)
-    #results <- calcMLSTScore(query[[filename]][loci[1:53]], loci[1:53], mlstdb=mlstdb, threads=threads)
 
     if (normalize) {
       i <- results > th.score
@@ -262,8 +257,6 @@ mlstverse <- function(filenames,
       } else {
         j <- which(i & mlstdb$genus==x[1] & mlstdb$species==x[2])
       }
-      #q.dist <- apply(mlstdb[j,loci], 1, getCounts, q)
-      #sfExport("loci", "len.loci")
       q.dist <- snowfall::sfApply(mlstdb[loci][j,], 1, getCounts, query[[filename]], loci, fill=TRUE)
 
       q.mean <- apply(q.dist, 2, mean, na.rm=T)
@@ -275,27 +268,34 @@ mlstverse <- function(filenames,
         function(i) {
           m <- q.mean[i]
           v <- q.var[i]
-          fit <- MASS::fitdistr(round(na.omit(q.dist[,i])),
+          fit <- try(MASS::fitdistr(round(na.omit(q.dist[,i])),
                           densfun="negative binomial",
-                          start=list(mu=m, size=m^2/(m+v)))
-          ks.test(x=q.dist[,i],
-                  y="pnbinom",
-                  size=fit$estimate[2],
-                  prob=fit$estimate[2]/fit$estimate[1])
-          #ks.test(x=q.dist[,i], y="pgamma", shape=m^2/v, scale=v/m)
-          ##          ks.test(x=q.dist[,i],
-          ##                  y="pnbinom",
-          ##                  size=q.mean[i]^2/(q.mean[i]+q.var[i]),
-          ##                  prob=q.mean[i]/(q.mean[i]+q.var[i]))
+                          start=list(mu=m, size=m^2/(m+v))), silent=FALSE)
+          if (class(fit) == "try-error") {
+            return(NA)
+          } else {
+            ks.test(x=q.dist[,i],
+                    y="pnbinom",
+                    size=fit$estimate[2],
+                    prob=fit$estimate[2]/fit$estimate[1])
+          }
         }
       )
-      tmp$ks.pvalue <- sapply(tmp$ks.test, "[[", "p.value")
-
+      
+      tmp$ks.pvalue <- sapply(tmp$ks.test, function(x) {
+        if(all(is.na(x))) {
+          return(NA)
+        } else {
+          return(x[["p.value"]])
+        }
+      })
       table.score <- data.frame(index=j, score=results[j], pvalue=tmp$ks.pvalue)
-      if (th.pvalue == 0) {
+      if (th.pvalue == 0 | all(is.na(table.score$pvalue))) {
         table.score.p <- table.score
+      } else if (any(table.score$pvalue > th.pvalue, na.rm=T)) {
+        table.score.p <- subset(table.score, pvalue > th.pvalue)
       } else {
-        table.score.p <- subset(table.score, pvalue > th.pvalue | pvalue==max(table.score$pvalue))
+        table.score.p <- subset(table.score, pvalue==max(table.score$pvalue, na.rm=T))
       }
       table.score.p.s <- subset(table.score.p, score==max(score))
       l <- table.score.p.s$index[order(table.score.p.s$pvalue, decreasing=T)[1]]
@@ -310,8 +310,7 @@ mlstverse <- function(filenames,
         tmp$mean <- c(tmp$mean, q.mean[j == l])
         tmp$var <- c(tmp$var, q.var[j == l])
         tmp$dist <- c(tmp$dist, list(q.dist[, j == l]))
-        tmp$pvalue <- c(tmp$pvalue, tmp$ks.pvalue[j ==
-          l])
+        tmp$pvalue <- c(tmp$pvalue, tmp$ks.pvalue[j == l])
         tmp$score <- c(tmp$score, results[l])
         tmp$strains <- c(tmp$strains, gsub("strain=", "", lapply(strsplit(mlstdb$notes[l], ","), "[", 3)))
       }
@@ -327,7 +326,6 @@ mlstverse <- function(filenames,
                  p.value=tmp$pvalue,
                  mean=tmp$mean,
                  var=tmp$var)
-  #               dist=tmp$dist)
     if (nrow(score[[filename]]) > 0) {
       score[[filename]] <- score[[filename]][order(score[[filename]]$p.value, decreasing=T),]
       score[[filename]] <- score[[filename]][order(score[[filename]]$score, decreasing=T),]
