@@ -2,7 +2,7 @@ FROM ubuntu:16.04
 
 MAINTAINER matsumoto <matsumoto@gen-info.osaka-u.ac.jp>
 
-ENV VERSION 0.1.1
+ENV VERSION 0.1.3
 
 RUN echo "deb http://cran.rstudio.com/bin/linux/ubuntu xenial-cran35/" | tee -a /etc/apt/sources.list \
  && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9 \
